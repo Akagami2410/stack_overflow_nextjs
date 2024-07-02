@@ -42,6 +42,34 @@ export const sidebarLinks: SidebarLink[] = [
     label: "Ask a question",
   },
 ];
+export const RightLinks = [
+  {
+    id: 0,
+    question:
+      "Would it be appropriate to point out an error in another paper during a referee report?",
+    URL: "/",
+  },
+  {
+    id: 1,
+    question: "How can an airconditioning machine exist?",
+    URL: "/",
+  },
+  {
+    id: 2,
+    question: "Interrogated every time crossing UK Border as citizen",
+    URL: "/",
+  },
+  {
+    id: 3,
+    question: "Low digit addition generator",
+    URL: "/",
+  },
+  {
+    id: 4,
+    question: "What is an example of 3 numbers that do not make up a vector?",
+    URL: "/",
+  },
+];
 export const BADGE_CRITERIA = {
   QUESTION_COUNT: {
     BRONZE: 10,
