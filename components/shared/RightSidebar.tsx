@@ -1,16 +1,8 @@
-import { RightLinks } from "@/constants";
+import { RightLinks, popularTags } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import RenderTags from "./RenderTags";
-
-const popularTags = [
-  { _id: 1, name: "javascript", totalQuestions: 5 },
-  { _id: 2, name: "react", totalQuestions: 5 },
-  { _id: 3, name: "next", totalQuestions: 5 },
-  { _id: 4, name: "vue", totalQuestions: 2 },
-  { _id: 5, name: "redux", totalQuestions: 10 },
-];
 
 const RightSidebar = () => {
   return (
