@@ -5,48 +5,13 @@ import NoContent from "@/components/shared/NoContent";
 import LocalSearch from "@/components/shared/search/LocalSearch";
 import { Button } from "@/components/ui/button";
 import { HomePageFilters } from "@/constants/filters";
+import { getQuestions } from "@/lib/actions/question.action";
 
 import Link from "next/link";
 
-const Questions = [
-  {
-    _id: "1",
-    title:
-      "JavaScript validation for a form stops the form data from being submitted to mysql database",
-    tags: [
-      { _id: "1", name: "Javascript" },
-      { _id: "2", name: "Async" },
-    ],
-    author: {
-      _id: "1",
-      name: "John Doe",
-      picture: "https://example.com/johndoe.jpg",
-    },
-    upvotes: 150000,
-    views: 50052,
-    answers: [{}], // Add actual objects for the answers as needed
-    createdAt: new Date("2023-07-01T00:00:00Z"),
-  },
-  {
-    _id: "2",
-    title: "JPA: SQL Error: 1062, SQLState: 23000 ERROR: Duplicate entry:",
-    tags: [
-      { _id: "1", name: "Javascript" },
-      { _id: "2", name: "Async" },
-    ],
-    author: {
-      _id: "2",
-      name: "Jane Doe",
-      picture: "https://example.com/janedoe.jpg",
-    },
-    upvotes: 20,
-    views: 200,
-    answers: [{}], // Add actual objects for the answers as needed
-    createdAt: new Date("2023-07-02T00:00:00Z"),
-  },
-];
+const Home = async () => {
+  const result = await getQuestions({});
 
-const Home = () => {
   return (
     <>
       <div className="flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center">
@@ -76,8 +41,8 @@ const Home = () => {
       <HomeFilters />
 
       <div className="mt-11 flex w-full flex-col gap-6">
-        {Questions.length ? (
-          Questions.map((question) => (
+        {result.questions.length ? (
+          result.questions.map((question) => (
             <QuestionCard
               key={question._id}
               _id={question._id}
