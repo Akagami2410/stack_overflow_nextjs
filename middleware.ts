@@ -7,11 +7,5 @@ export default clerkMiddleware((auth, req) => {
 });
 
 export const config = {
-  // Ensure the webhook path is excluded from the middleware
-  matcher: [
-    "/((?!.*\\..*|_next).*)", // Matches all routes except those with a file extension or _next
-    "/",
-    "/(api|trpc)(.*)",
-    "!/api/webhook", // Exclude the webhook path from the matcher
-  ],
+  matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)", "/api/webhook"],
 };
