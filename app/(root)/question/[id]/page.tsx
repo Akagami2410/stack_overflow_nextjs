@@ -1,9 +1,10 @@
+// import { GetQuestionByIdParams } from "@/lib/actions/shared.types";
 import { getQuestionById } from "@/lib/actions/question.action";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const Page = async ({ params, searchParams }) => {
+const Page = async ({ params }: any) => {
   const result = await getQuestionById({ questionId: params.id });
 
   return (
@@ -31,6 +32,8 @@ const Page = async ({ params, searchParams }) => {
           {result.title}
         </h2>
       </div>
+
+      <div></div>
     </>
   );
 };
