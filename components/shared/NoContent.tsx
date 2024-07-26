@@ -11,7 +11,7 @@ interface Props {
 
 const NoContent = ({ title, description, link, linkTitle }: Props) => {
   return (
-    <div className="mt-10 flex flex-col items-center justify-center gap-8">
+    <div className="mt-10 flex w-full flex-col items-center justify-center gap-8">
       <Image
         src="/assets/images/light-illustration.png"
         alt="Nothing"
